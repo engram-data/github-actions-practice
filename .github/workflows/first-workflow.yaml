@@ -17,3 +17,9 @@ jobs:
         steps:
             - name: View SW Version
               run: sw_vers
+    dependent-job:
+        runs-on: windows-latest
+        needs: run-shell-command
+        steps:
+            - name : echo a string
+              run: WRITE-OUTPUT "Windows String"
